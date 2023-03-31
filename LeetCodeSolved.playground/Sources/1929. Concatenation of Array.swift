@@ -1,6 +1,6 @@
 import Foundation
 
-class Solution {
+class Solution1929 {
     func getConcatenation(_ nums: [Int]) -> [Int] {
         
         var ans: [Int] = nums
