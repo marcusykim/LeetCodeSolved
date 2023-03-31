@@ -1,6 +1,6 @@
 import Foundation
 
-class Solution {
+class Solution709 {
     func toLowerCase(_ s: String) -> String {
         
 

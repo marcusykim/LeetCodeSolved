@@ -1,6 +1,6 @@
 import Foundation
 
-class Solution {
+class Solution1688 {
     func numberOfMatches(_ n: Int) -> Int {
         // keep dividing by two and add the resulting number to growing sum of matches
 
