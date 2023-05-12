@@ -1,75 +1,32 @@
-import Foundation
-
 class Solution1704 {
     func halvesAreAlike(_ s: String) -> Bool {
-        
-        var tempArray = Array(s)
 
-        var vowelCountFirst = 0
-        var vowelCountSecond = 0
+        var sArray: [Character] = Array(s)
+        var firstHalf: ArraySlice<Character> = sArray[0...(sArray.count / 2) - 1]
+        var secondHalf: ArraySlice<Character> = sArray[(sArray.count / 2)...sArray.count - 1]
+        var vowelsInFirstHalf: Int = 0
+        var vowelsInSecondHalf: Int = 0
 
-        var middleIndex = (s.count / 2) + 1
+        var vowels: [Character] = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
-        for i in 0..<tempArray.count / 2 {
-
-            let letter = tempArray[i]
-
-            switch letter {
-                case "A":
-                    vowelCountFirst += 1
-                case "a":
-                    vowelCountFirst += 1
-                case "E":
-                    vowelCountFirst += 1
-                case "e":
-                    vowelCountFirst += 1
-                case "I":
-                    vowelCountFirst += 1
-                case "i":
-                    vowelCountFirst += 1
-                case "O":
-                    vowelCountFirst += 1
-                case "o":
-                    vowelCountFirst += 1
-                case "U":
-                    vowelCountFirst += 1
-                case "u":
-                    vowelCountFirst += 1
-                default:
-                    continue
+        for char in firstHalf {
+            if vowels.contains(char) {
+                vowelsInFirstHalf += 1
             }
         }
 
-        for i in middleIndex..<tempArray.count / 2{
-
-            let letter = tempArray[i]
-
-            switch letter {
-                case "A":
-                    vowelCountSecond += 1
-                case "a":
-                    vowelCountSecond += 1
-                case "E":
-                    vowelCountSecond += 1
-                case "e":
-                    vowelCountSecond += 1
-                case "I":
-                    vowelCountSecond += 1
-                case "i":
-                    vowelCountSecond += 1
-                case "O":
-                    vowelCountSecond += 1
-                case "o":
-                    vowelCountSecond += 1
-                case "U":
-                    vowelCountSecond += 1
-                case "u":
-                    vowelCountSecond += 1
-                default:
-                    continue
+        for char in secondHalf {
+            if vowels.contains(char) {
+                vowelsInSecondHalf += 1
             }
         }
-    
-        return vowelCountFirst == vowelCountSecond
+
+        print(firstHalf)
+        print(secondHalf)
+
+
+
+        return vowelsInFirstHalf == vowelsInSecondHalf
+
     }
 }
