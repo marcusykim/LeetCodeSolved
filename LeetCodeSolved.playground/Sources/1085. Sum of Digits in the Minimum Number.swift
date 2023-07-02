@@ -2,17 +2,13 @@ import Foundation
 
 class Solution1085 {
     func sumOfDigits(_ nums: [Int]) -> Int {
-        // find min
-        // convert min int into string
-        // loop through string, summing all digits
-        // return result
+     
 
+        let min = nums.min()!
 
-        var min = nums.min()!
+        let stringMin = String(min)
 
-        var stringMin = String(min)
-
-        var result = 0
+        let result = 0
 
         for char in stringMin {
             result += char.wholeNumberValue!
