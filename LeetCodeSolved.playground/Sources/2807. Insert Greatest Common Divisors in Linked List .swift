@@ -1,5 +1,3 @@
-import Foundation
-
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -10,7 +8,7 @@ import Foundation
  *     public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
  * }
  */
-class Solution2807 {
+class Solution {
     func insertGreatestCommonDivisors(_ head: ListNode?) -> ListNode? {
         
         if head!.next == nil {
@@ -26,26 +24,32 @@ class Solution2807 {
             var larger = max(lagging!.val, leading!.val)
             var smaller = min(lagging!.val, leading!.val)
 
-            for i in 0...smaller {
-                var j = smaller - i
+            var i = smaller
+            var j = larger
 
-                //print(j)
+            while j >= 1 {
 
-                    if larger % j == 0 {
-                        var newNode = ListNode(j)
-                        print(newNode.val)
+                print("j: ", j)
+                print("i: ", i)
+                    if j % i == 0 {
+                        var newNode = ListNode(i)
+                        print("newNode: ", newNode.val)
                         lagging!.next = newNode
                         newNode.next = leading
                         lagging = newNode
                         leading = leading!.next
                         break
-                    } else {
-                        lagging = lagging!.next
-                        leading = leading!.next
+                    // } else {
+                    //     lagging = lagging!.next
+                    //     leading = leading!.next
+                    // }
                     }
-                
+                j -= 1
             }
 
+
+            lagging = lagging!.next
+            leading = leading!.next
 
         }
 
