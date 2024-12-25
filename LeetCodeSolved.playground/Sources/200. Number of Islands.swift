@@ -1,29 +1,32 @@
-import Foundation
-
 class Solution {
     func numIslands(_ grid: [[Character]]) -> Int {
+
         var grid = grid
-        var numberOfIslands = 0
-        
+        var result = 0
         for row in 0..<grid.count {
-            for col in 0..<grid[0].count {
-                if grid[row][col] == "1" {
-                    dfs(&grid, row, col)
-                    numberOfIslands += 1
+            for column in 0..<grid[0].count {
+                print(result)
+                if grid[row][column] == "1" {
+                    dfs(&grid, row, column)
+                    result += 1
                 }
             }
         }
-        return numberOfIslands
-    }
-    
-    private func dfs(_ grid: inout [[Character]], _ row: Int, _ col: Int) {
-        if row < 0 || row >= grid.count || col < 0 || col >= grid[0].count { return }
-        if grid[row][col] != "1" { return }
-        grid[row][col] = "0"
 
-        dfs(&grid, row - 1, col)
-        dfs(&grid, row + 1, col)
-        dfs(&grid, row, col - 1)
-        dfs(&grid, row, col + 1)
+        return result
+    }
+
+    func dfs(_ grid: inout [[Character]], _ row: Int, _ column: Int) {
+
+        if row < 0 || row >= grid.count || column < 0 || column >= grid[0].count {return}
+        if grid[row][column] != "1" {return}
+
+        grid[row][column] = "0"
+
+        dfs(&grid, row - 1, column)
+        dfs(&grid, row + 1, column)
+        dfs(&grid, row, column - 1)
+        dfs(&grid, row, column + 1)
+
     }
 }
