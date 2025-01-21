@@ -1,5 +1,3 @@
-import Foundation
-
 class Solution {
     func replaceDigits(_ s: String) -> String {
         // need array that is the alphabet
@@ -19,9 +17,10 @@ class Solution {
         }
         print(sArray)
 
-        let result = sArray.joined(separator: "")
+        let result = String(sArray)
 
-        return ""
+        return result
+        
 
     }
 }
