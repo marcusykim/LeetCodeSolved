@@ -2,10 +2,6 @@ import Foundation
 
 class Solution {
     func numberGame(_ nums: [Int]) -> [Int] {
-        
-        // loop
-            // remove remove
-            // append in opposite order
 
         var nums = nums
 
