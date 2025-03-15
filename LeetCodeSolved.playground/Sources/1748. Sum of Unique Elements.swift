@@ -6,7 +6,7 @@ class Solution1748 {
         var dict: [Int: Int] = [:]
 
         for num in nums {
-            if dict[num] != nil {
+            if dict[num] != nil 
                 dict[num]! += 1
             } else {
                 dict[num] = 1
