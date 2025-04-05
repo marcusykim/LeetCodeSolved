@@ -4,12 +4,7 @@ class Solution {
     func totalMoney(_ n: Int) -> Int {
         
 
-        // monday dollar tracker
-        // day tracker
-        //while loop monday dollar
-            // for loop from monday dollar to monday dollar + 7
-                // add money
-                // increment day tracker
+    
 
 
         var contributionDays = 1
